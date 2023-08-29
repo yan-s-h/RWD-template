@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-grid.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <section id="loading" class="d-flex align-items-center justify-content-center"><img src="./Ball-1s-200px.svg" alt="">
+  </section>
+  <section id="subscribe" class="align-items-center justify-content-center">
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span><button type="button" id="modalClose" class="btn-close" data-bs-dismiss="modal">X</button></span>
+            <h3 class="modal-title" id="staticBackdropLabel">Subscribe to our newsletter</h3>
+
+          </div>
+          <div class="modal-body">
+            Want to be notified when our article is published? Enter your email address and name below to be
+            the first
+            to know.
+            <hr class="my-4"><input type="email" class="form-control" id="inputEmail" placeholder="Email"><br><input
+              type="text" class="form-control my-3" id="inputName" placeholder="Name">
+
+          </div>
+          <div class="modal-footer">
+            <button id="signUp" type="submit" class="btn">SIGN UP FOR NEWSLETTER NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <nav class="navbar navbar-expand-lg navbar-light d-flex align-items-center justify-content-center" id="nav">
+    <div class="container-fluid d-flex align-items-center justify-content-center flex-row">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" id="barButton">
+        <span class="navbar-toggler-icon mx-3" id="barIcon"><svg xmlns="http://www.w3.org/2000/svg" height="2em"
+            viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <style>
+              svg {
+                fill: #ffffff
+              }
+            </style>
+            <path
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+          </svg></span>
+      </button>
+      <a class="navbar-brand" href="#"><img
+          src="https://elementor.dostguru.com/clausgift/wp-content/themes/clausgift/images/webi/logo.png"
+          style="width: 250px;height: 65px;object-fit: cover;" id="photoInNavBar"></a>
+      <div class="collapse navbar-collapse mx-auto" id="navbarText">
+        <ul class="d-flex align-items-center justify-content-center">
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item dropdown mx-2" id="blogTag">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Blog<svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown" id="dropdownLg">
+              <li><a class="dropdown-item m-2 d-block me-5" href="#" style="color: black;">Left Sidebar</a></li>
+              <li><a class="dropdown-item m-2 d-block me-5" href="#" style="color: black;">Right Sidebar</a></li>
+              <li><a class="dropdown-item m-2 d-block me-5" href="#" style="color: black;">No Sidebar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">FAQ's</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Category</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <svg class="ms-auto" xmlns="http://www.w3.org/2000/svg" height="2em"
+        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+          d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+      </svg><svg class="ms-2" xmlns="http://www.w3.org/2000/svg" height="2em"
+        viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+          d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+      </svg><svg id="giftInTopNav" class="" xmlns="http://www.w3.org/2000/svg" height="2em"
+        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+        <path
+          d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z" />
+      </svg>
+    </div>
+    <div class="offcanvas offcanvas-end px-3" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h3>
+        <button type="button" class="btn-close text-reset" id="offcanvasClose" data-bs-dismiss="offcanvas"
+          aria-label="Close">X</button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item my-4">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item my-4">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item my-4 dropdown" id="offcanvasBlogTag">
+            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Blog<svg id="fontBlack" xmlns="http://www.w3.org/2000/svg" class="ms-5" height="1em"
+                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu ps-2" aria-labelledby="offcanvasNavbarDropdown" id="dropdownSm">
+              <li><a class="dropdown-item d-block my-3" href="#">Left Sidebar</a></li>
+              <li><a class="dropdown-item d-block my-3" href="#">Right Sidebar</a></li>
+              <li><a class="dropdown-item d-block my-3" href="#">No Sidebar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item my-4">
+            <a class="nav-link" href="#">FAQ's</a>
+          </li>
+          <li class="nav-item my-4">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item my-4">
+            <a class="nav-link" href="#">Category</a>
+          </li>
+          <li class="nav-item my-4">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <section id="snow" class="pt-3">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img style="border-radius: 8px;"
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/Slider1.jpg"
+              class="d-block w-100" alt="..." id="carouselPhoto">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="sectionProductList">
+    <div class="container mt-5" id="productList">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div
+          class="d-flex flex-column align-items-center justify-content-center col-4 col-md-3 col-lg-2 mt-5 text-16-20">
+          <div class="productListBox"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/1.png" alt="">
+          </div>Jingle
+          Bell
+        </div>
+        <div
+          class="d-flex flex-column align-items-center justify-content-center col-4 col-md-3 col-lg-2 mt-5 text-16-20">
+          <div class="productListBox"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/2.png" alt="">
+          </div>Anniversary
+        </div>
+        <div
+          class="d-flex flex-column align-items-center justify-content-center col-4 col-md-3 col-lg-2 mt-5 text-16-20">
+          <div class="productListBox"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/4.png" alt="">
+          </div>Bounty
+        </div>
+        <div id="candle"
+          class="d-flex flex-column align-items-center justify-content-center col-4 col-md-3 col-lg-2 mt-5 text-16-20">
+          <div class="productListBox"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/9.png" alt="">
+          </div>Candle
+        </div>
+        <div id="candy"
+          class="d-flex flex-column align-items-center justify-content-center col-4 col-md-3 col-lg-2 mt-5 text-16-20">
+          <div class="productListBox"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/10.png" alt="">
+          </div>Candy
+        </div>
+        <div id="candyCane"
+          class="d-flex flex-column align-items-center justify-content-center col-4 col-md-3 col-lg-2 mt-5 text-16-20">
+          <div class="productListBox"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/5.png" alt="">
+          </div>Candy Cane
+        </div>
+      </div>
+    </div>
+    <div class="container"><img class="mx-auto my-5 d-block"
+        src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/1211x500.png" alt=""
+        style="max-width:100%;"></div>
+  </section>
+  <section id="newProducts">
+    <h1 style="text-align: center;" class="mb-5">NEW PRODUCTS</h1>
+    <div class="container d-flex justify-content-center align-items-center flex-wrap">
+      <div class="button m-3">Featured</div>
+      <div class="button m-3">BestSelling</div>
+      <div class="button m-3">Latest</div>
+    </div>
+    <div class="container" style="max-height: 828px;overflow: hidden;">
+      <div class="row d-flex justify-content-center">
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly" style="position: relative;">
+          <img class="d-block mx-auto" id="photoTest"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/2-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span>
+        </div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/10-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/14-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/22-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/24-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/6-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/11-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/19-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/28-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/25-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+      </div>
+    </div>
+    <div class="container" style="text-align: center;margin: auto;">
+      <div style="width: 30px;height: 30px;border-radius: 50%;" class="d-inline-block"><img
+          style="height: 30px;display: block;margin: auto;" src="./chevron-left-solid.svg" alt=""></div>
+      <div style="width: 30px;height: 30px;border-radius: 50%;" class="d-inline-block"><img
+          style="height: 30px;display: block;margin: auto;" src="./chevron-right-solid.svg" alt=""></div>
+
+    </div>
+  </section>
+  <section id="comment" class="mt-3">
+    <div class="container-fluid p-0">
+      <div id="particles-js-2">
+        <div class="comment py-3 px-5 flex-column d-flex justify-content-center align-items-center">
+          <span class="m-1 m-md-2"><img
+              src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/10/testimonial3.png" alt=""
+              style="border-radius: 50%;border: 1px solid red;"></span>
+          <span class="m-1 m-md-2">Hathim Rashma</span>
+          <span class="m-1 m-md-2" style="color: gray; font-size: 14px;">Developer</span>
+          <span class="m-1 m-md-2" style="color: gray; font-size: 14px;">More recently with desktop publishing software
+            like
+            Aldus
+            PageMaker including versions of Lorem Ipsum has been the industry's standard dum...</span>
+        </div>
+      </div>
+      <div class="container my-4">
+        <div class="row">
+          <div
+            class="col-12 col-md-3 d-flex justify-content-start flex-row flex-md-column justify-content-md-center align-items-center">
+            <span><img style="width: 70px;height: 70px;border: 2px dashed gray;border-radius: 50%;"
+                class="d-block p-3 m-3"
+                src="https://elementor.dostguru.com/clausgift/wp-content/themes/clausgift/images/webi/svg/customer.svg"
+                alt=""></span><span class="serviceText">24 X 7 Free Support</span>
+          </div>
+          <div
+            class="col-12 col-md-3 d-flex justify-content-start flex-row flex-md-column justify-content-md-center align-items-center">
+            <span><img style="width: 70px;height: 70px;border: 2px dashed gray;border-radius: 50%;"
+                class="d-block p-3 m-3"
+                src="https://elementor.dostguru.com/clausgift/wp-content/themes/clausgift/images/webi/svg/money.svg"
+                alt=""></span><span class="serviceText">Money Back Guarantee</span>
+          </div>
+          <div
+            class="col-12 col-md-3 d-flex justify-content-start flex-row flex-md-column justify-content-md-center align-items-center">
+            <span><img style="width: 70px;height: 70px;border: 2px dashed gray;border-radius: 50%;"
+                class="d-block p-3 m-3"
+                src="https://elementor.dostguru.com/clausgift/wp-content/themes/clausgift/images/webi/svg/ship.svg"
+                alt=""></span><span class="serviceText">Free Worldwide Shipping</span>
+          </div>
+          <div
+            class="col-12 col-md-3 d-flex justify-content-start flex-row flex-md-column justify-content-md-center align-items-center">
+            <span><img style="width: 70px;height: 70px;border: 2px dashed gray;border-radius: 50%;"
+                class="d-block p-3 m-3"
+                src="https://elementor.dostguru.com/clausgift/wp-content/themes/clausgift/images/webi/svg/gift.svg"
+                alt=""></span><span class="serviceText">Win $100 To Shop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container"></div>
+  </section>
+  <section id="featuredProducts">
+    <h1 style="text-align: center;" class="my-5">FEATURED PRODUCTS</h1>
+    <div class="container" style="max-height: 414px;overflow: hidden;">
+      <div class="row d-flex justify-content-center">
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly" style="position: relative;">
+          <img class="d-block mx-auto" id="photoTest"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/2-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span>
+        </div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/6-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/7-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/10-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+        <div class="col p-0 d-flex flex-column align-items-center justify-content-evenly"><img class="d-block mx-auto"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/07/11-295x330.jpg" alt=""><span
+            class="productName my-3">Sample</span><span class="productPrice mb-3">$100</span></div>
+      </div>
+    </div>
+    <div class="container mb-5" style="text-align: center;margin: auto;">
+      <div style="width: 30px;height: 30px;border-radius: 50%;" class="d-inline-block"><img
+          style="height: 30px;display: block;margin: auto;" src="./chevron-left-solid.svg" alt=""></div>
+      <div style="width: 30px;height: 30px;border-radius: 50%;" class="d-inline-block"><img
+          style="height: 30px;display: block;margin: auto;" src="./chevron-right-solid.svg" alt=""></div>
+
+    </div>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12 col-md-6" style="position: relative;cursor: pointer;"><img
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/1.jpg" style="width: 100%;" alt="">
+          <div style="position: absolute;right: 10%;top: 0;width: 100%;height: 100%;"
+            class="d-flex flex-column align-items-end justify-content-center">
+            <span style="color: black;" class="my-1 text-16-24">Big Sale</span><span style="color: black;"
+              class="my-1 text-20-42">Christmas
+              Gift</span><span style="color: black;" class="my-1 text-20-42">Collection</span><span
+              style="color: black;" class="my-1 text-16-24">Upto 40% Off</span><span
+              style="color: white;background-color: red;border-radius: 10px;border: 2px red solid;"
+              class="my-1 text-12-14">SHOP
+              NOW</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6" style="position: relative;cursor: pointer;"><img
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/2.jpg" style="width: 100%;" alt="">
+          <div style="position: absolute;right: 10%;top: 0;width: 100%;height: 100%;"
+            class="d-flex flex-column align-items-end justify-content-center">
+            <span style="color: white;" class="my-1 text-16-24">Best Collection</span><span style="color: white;"
+              class="my-1 text-20-42">Beautiful</span><span style="color: white;" class="my-1 text-20-42">Christmas
+              Tree</span><span style="color: white;" class="my-1 text-16-24">Upto 60% Off</span><span
+              style="color: black;background-color: yellow;border-radius: 10px;border:2px solid yellow;"
+              class="my-1 text-12-14">SHOP
+              NOW</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="latestNews">
+    <h1 class="my-5" style="text-align: center;">LATEST NEWS</h1>
+    <div class="container">
+      <div class="row">
+        <div style="position: relative;" id="latestNews01" class="col-12 col-md-6 col-xl-4"><img
+            style="width: 100%;border-radius: 8px;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/08/4.jpg" alt="">
+          <div
+            style="position: absolute;left: 5%;top: 6%;background-color: yellow;border-radius: 2px;padding: 6px 10px 6px 10px;">
+            19
+            MAY 2023</div>
+          <div
+            style="position: absolute;width: 90%;left: 5%;top:75%;background-color: white;text-align: center;border-radius: 8px;box-sizing: border-box;box-shadow:3px 3px 10px lightgray"
+            class="p-1">
+            <div style="border-radius: 8px;border: 2px dashed lightgray;" class="p-3"><span style="font-size: 18px;"
+                class="mt-1 mb-2 d-block">Donec
+                Mattis Sapien
+                Ac Dolor...</span>
+              <hr><span class="mt-2 mb-1 d-block" style="color: lightgray;">Admin:Admin<br>Praesent
+                aliquet
+                fringilla mattis.
+                Aenean<br>tristque commodo
+                gravida. Donec
+                vita...</span><br><span class="mb-1 d-block">READ MORE&rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div style="position: relative;" id="latestNews02" class="col-12 col-md-6 col-xl-4"><img
+            style="width: 100%;border-radius: 8px;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/08/5.jpg" alt="">
+          <div
+            style="position: absolute;left: 5%;top: 6%;background-color: yellow;border-radius: 2px;padding: 6px 10px 6px 10px;">
+            19
+            MAY 2023</div>
+          <div
+            style="position: absolute;width: 90%;left: 5%;top:75%;background-color: white;text-align: center;border-radius: 8px;box-sizing: border-box;box-shadow:3px 3px 10px lightgray"
+            class="p-1">
+            <div style="border-radius: 8px;border: 2px dashed lightgray;" class="p-3"><span style="font-size: 18px;"
+                class="mt-1 mb-2 d-block">Donec
+                Mattis Sapien
+                Ac Dolor...</span>
+              <hr><span class="mt-2 mb-1 d-block" style="color: lightgray;">Admin:Admin<br>Praesent
+                aliquet
+                fringilla mattis.
+                Aenean<br>tristque commodo
+                gravida. Donec
+                vita...</span><br><span class="mb-1 d-block">READ MORE&rarr;</span>
+            </div>
+          </div>
+        </div>
+        <div style="position: relative;" id="latestNews03" class="col-12 col-md-6 col-xl-4"><img
+            style="width: 100%;border-radius: 8px;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2021/08/6.jpg" alt="">
+          <div
+            style="position: absolute;left: 5%;top: 6%;background-color: yellow;border-radius: 2px;padding: 6px 10px 6px 10px;">
+            19
+            MAY 2023</div>
+          <div
+            style="position: absolute;width: 90%;left: 5%;top:75%;background-color: white;text-align: center;border-radius: 8px;box-sizing: border-box;box-shadow:3px 3px 10px lightgray"
+            class="p-1">
+            <div style="border-radius: 8px;border: 2px dashed lightgray;" class="p-3"><span style="font-size: 18px;"
+                class="mt-1 mb-2 d-block">Donec
+                Mattis Sapien
+                Ac Dolor...</span>
+              <hr><span class="mt-2 mb-1 d-block" style="color: lightgray;">Admin:Admin<br>Praesent
+                aliquet
+                fringilla mattis.
+                Aenean<br>tristque commodo
+                gravida. Donec
+                vita...</span><br><span class="mb-1 d-block">READ MORE&rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container marginTop" style="text-align: center;">
+      <div style="width: 30px;height: 30px;border-radius: 50%;" class="d-inline-block"><img
+          style="height: 30px;display: block;margin: auto;" src="./chevron-left-solid.svg" alt=""></div>
+      <div style="width: 30px;height: 30px;border-radius: 50%;" class="d-inline-block"><img
+          style="height: 30px;display: block;margin: auto;" src="./chevron-right-solid.svg" alt=""></div>
+    </div>
+    <div class="container my-5" id="carouselItems">
+      <div class="row" style="text-align: center;">
+        <div class="col-4 col-md-2"><img style="border: 2px dashed lightgray;max-width: 100%;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/menufacture-12.png" alt=""></div>
+        <div class="col-4 col-md-2"><img style="border: 2px dashed lightgray;max-width: 100%;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/menufacture-11.png" alt=""></div>
+        <div class="col-4 col-md-2"><img style="border: 2px dashed lightgray;max-width: 100%;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/menufacture-10.png" alt=""></div>
+        <div class="col-4 col-md-2" id="carouselItems01"><img style="border: 2px dashed lightgray;max-width: 100%;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/menufacture-9.png" alt=""></div>
+        <div class="col-4 col-md-2" id="carouselItems02"><img style="border: 2px dashed lightgray;max-width: 100%;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/menufacture-8.png" alt=""></div>
+        <div class="col-4 col-md-2" id="carouselItems03"><img style="border: 2px dashed lightgray;max-width: 100%;"
+            src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/menufacture-7.png" alt=""></div>
+
+      </div>
+  </section>
+  <section id="footer" style="position: relative;">
+    <div id="particles-js-3"></div>
+    <div class="container" style="max-height: 780px;">
+      <div style="border-bottom: 2px dashed lightgray;" id="footerTop"><img
+          src="https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/02/logo.png" alt=""
+          style="display: inline-block;" class="m-2">
+        <div><span style="display: inline-block;" class="m-1"><svg xmlns="http://www.w3.org/2000/svg" height="2em"
+              viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+            </svg></span><span style="display: inline-block;" class="m-1"><svg xmlns="http://www.w3.org/2000/svg"
+              height="2em"
+              viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+            </svg></span><span style="display: inline-block;" class="m-1"><svg xmlns="http://www.w3.org/2000/svg"
+              height="2em"
+              viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg></span><span style="display: inline-block;" class="m-1"><svg xmlns="http://www.w3.org/2000/svg"
+              height="2em"
+              viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M0 64C0 46.3 14.3 32 32 32c229.8 0 416 186.2 416 416c0 17.7-14.3 32-32 32s-32-14.3-32-32C384 253.6 226.4 96 32 96C14.3 96 0 81.7 0 64zM0 416a64 64 0 1 1 128 0A64 64 0 1 1 0 416zM32 160c159.1 0 288 128.9 288 288c0 17.7-14.3 32-32 32s-32-14.3-32-32c0-123.7-100.3-224-224-224c-17.7 0-32-14.3-32-32s14.3-32 32-32z" />
+            </svg></span></div>
+      </div>
+      <div>
+
+        <div class="d-flex justify-content-center align-items-center my-3" id="addressBox">
+          <img src="https://elementor.dostguru.com/clausgift/wp-content/themes/clausgift/images/webi/svg/news.png"
+            alt="" id="mail">
+          <h2 id="SignUpForNewsletter" class="my-2">Sign Up For Newsletter</h2>
+          <input type="email" placeholder="Your Email Address..." id="address">
+          <svg id="paper" style="display: inline-block;height: 40px;" xmlns="http://www.w3.org/2000/svg" height="2em"
+            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z" />
+          </svg>
+
+        </div>
+        <div id="footerTopics01" style="color: yellow;" class="d-flex justify-content-between mx-4 my-3">OUR ADDRESS<svg
+            xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></div>
+        <div id="footerTopics02" style="color: yellow;" class="d-flex justify-content-between mx-4 my-3">PAYMENT<svg
+            xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></div>
+        <div id="footerTopics03" style="color: yellow;" class="d-flex justify-content-between mx-4 my-3">ACCOUNT<svg
+            xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></div>
+        <div id="footerTopics04" style="color: yellow;" class="d-flex justify-content-between mx-4 my-3">CATEGORY<svg
+            xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></div>
+        <div id="footerTopics05" style="color: yellow;" class="d-flex justify-content-between mx-4 my-3">INFORMATION<svg
+            xmlns="http://www.w3.org/2000/svg" height="1em"
+            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+          </svg></div>
+      </div>
+      <div class="row" id="footerTopics06">
+        <div class="col-3">
+          <h3 style="color: yellow;" class="my-3">OUR ADDRESS</h2>
+            <ul>
+              <li class="my-2" style="color: white;"><svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                  viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M215.4 96H144 107.8 96v8.8V144v40.4 89L.2 202.5c1.6-18.1 10.9-34.9 25.7-45.8L48 140.3V96c0-26.5 21.5-48 48-48h76.6l49.9-36.9C232.2 3.9 243.9 0 256 0s23.8 3.9 33.5 11L339.4 48H416c26.5 0 48 21.5 48 48v44.3l22.1 16.4c14.8 10.9 24.1 27.7 25.7 45.8L416 273.4v-89V144 104.8 96H404.2 368 296.6 215.4zM0 448V242.1L217.6 403.3c11.1 8.2 24.6 12.7 38.4 12.7s27.3-4.4 38.4-12.7L512 242.1V448v0c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64v0zM176 160H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H176c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                </svg>　demo@demo.com</li>
+              <li class="my-2" style="color: white;"><svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                  viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+                </svg>　1093 Marigold Lane, Coral Way, Miami, Florida, 33169</li>
+              <li class="my-2" style="color: white;"><svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                  viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M280 0C408.1 0 512 103.9 512 232c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-101.6-82.4-184-184-184c-13.3 0-24-10.7-24-24s10.7-24 24-24zm8 192a32 32 0 1 1 0 64 32 32 0 1 1 0-64zm-32-72c0-13.3 10.7-24 24-24c75.1 0 136 60.9 136 136c0 13.3-10.7 24-24 24s-24-10.7-24-24c0-48.6-39.4-88-88-88c-13.3 0-24-10.7-24-24zM117.5 1.4c19.4-5.3 39.7 4.6 47.4 23.2l40 96c6.8 16.3 2.1 35.2-11.6 46.3L144 207.3c33.3 70.4 90.3 127.4 160.7 160.7L345 318.7c11.2-13.7 30-18.4 46.3-11.6l96 40c18.6 7.7 28.5 28 23.2 47.4l-24 88C481.8 499.9 466 512 448 512C200.6 512 0 311.4 0 64C0 46 12.1 30.2 29.5 25.4l88-24z" />
+                </svg>　Call us: 0123-456-789</li>
+            </ul>
+        </div>
+        <div class="col-3">
+          <h3 style="color: yellow;" class="my-3">ACCOUNT</h2>
+            <ul>
+              <li class="my-2" style="color: white;">Orders</li>
+              <li class="my-2" style="color: white;">Downloads</li>
+              <li class="my-2" style="color: white;">My Account</li>
+              <li class="my-2" style="color: white;">Account Details</li>
+            </ul>
+        </div>
+        <div class="col-3">
+          <h3 style="color: yellow;" class="my-3">CATEGORY</h2>
+            <ul>
+              <li class="my-2" style="color:white">Candy Cane</li>
+              <li class="my-2" style="color:white">Gift</li>
+              <li class="my-2" style="color:white">Bounty</li>
+              <li class="my-2" style="color:white">Tree</li>
+              <li class="my-2" style="color:white">Candy</li>
+              <li class="my-2" style="color:white">Candle</li>
+            </ul>
+        </div>
+        <div class="col-3">
+          <h3 style="color: yellow;" class="my-3">INFORMATION</h2>
+            <ul>
+              <li class="my-2" style="color: white;">FAQ's</li>
+              <li class="my-2" style="color: white;">Wishlist</li>
+              <li class="my-2" style="color: white;">Compare</li>
+              <li class="my-2" style="color: white;">Privacy Policy</li>
+              <li class="my-2" style="color: white;">Delivery Information</li>
+              <li class="my-2" style="color: white;">Refund And Returns Policy</li>
+              <li class="my-2" style="color: white;">Contact Us</li>
+            </ul>
+        </div>
+        <div class="col-3">
+          <h3 style="color: yellow;" class="my-3">PAYMENT</h2>
+            <svg class="me-3" xmlns="http://www.w3.org/2000/svg" height="2em"
+              viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M482.9 410.3c0 6.8-4.6 11.7-11.2 11.7-6.8 0-11.2-5.2-11.2-11.7 0-6.5 4.4-11.7 11.2-11.7 6.6 0 11.2 5.2 11.2 11.7zm-310.8-11.7c-7.1 0-11.2 5.2-11.2 11.7 0 6.5 4.1 11.7 11.2 11.7 6.5 0 10.9-4.9 10.9-11.7-.1-6.5-4.4-11.7-10.9-11.7zm117.5-.3c-5.4 0-8.7 3.5-9.5 8.7h19.1c-.9-5.7-4.4-8.7-9.6-8.7zm107.8.3c-6.8 0-10.9 5.2-10.9 11.7 0 6.5 4.1 11.7 10.9 11.7 6.8 0 11.2-4.9 11.2-11.7 0-6.5-4.4-11.7-11.2-11.7zm105.9 26.1c0 .3.3.5.3 1.1 0 .3-.3.5-.3 1.1-.3.3-.3.5-.5.8-.3.3-.5.5-1.1.5-.3.3-.5.3-1.1.3-.3 0-.5 0-1.1-.3-.3 0-.5-.3-.8-.5-.3-.3-.5-.5-.5-.8-.3-.5-.3-.8-.3-1.1 0-.5 0-.8.3-1.1 0-.5.3-.8.5-1.1.3-.3.5-.3.8-.5.5-.3.8-.3 1.1-.3.5 0 .8 0 1.1.3.5.3.8.3 1.1.5s.2.6.5 1.1zm-2.2 1.4c.5 0 .5-.3.8-.3.3-.3.3-.5.3-.8 0-.3 0-.5-.3-.8-.3 0-.5-.3-1.1-.3h-1.6v3.5h.8V426h.3l1.1 1.4h.8l-1.1-1.3zM576 81v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V81c0-26.5 21.5-48 48-48h480c26.5 0 48 21.5 48 48zM64 220.6c0 76.5 62.1 138.5 138.5 138.5 27.2 0 53.9-8.2 76.5-23.1-72.9-59.3-72.4-171.2 0-230.5-22.6-15-49.3-23.1-76.5-23.1-76.4-.1-138.5 62-138.5 138.2zm224 108.8c70.5-55 70.2-162.2 0-217.5-70.2 55.3-70.5 162.6 0 217.5zm-142.3 76.3c0-8.7-5.7-14.4-14.7-14.7-4.6 0-9.5 1.4-12.8 6.5-2.4-4.1-6.5-6.5-12.2-6.5-3.8 0-7.6 1.4-10.6 5.4V392h-8.2v36.7h8.2c0-18.9-2.5-30.2 9-30.2 10.2 0 8.2 10.2 8.2 30.2h7.9c0-18.3-2.5-30.2 9-30.2 10.2 0 8.2 10 8.2 30.2h8.2v-23zm44.9-13.7h-7.9v4.4c-2.7-3.3-6.5-5.4-11.7-5.4-10.3 0-18.2 8.2-18.2 19.3 0 11.2 7.9 19.3 18.2 19.3 5.2 0 9-1.9 11.7-5.4v4.6h7.9V392zm40.5 25.6c0-15-22.9-8.2-22.9-15.2 0-5.7 11.9-4.8 18.5-1.1l3.3-6.5c-9.4-6.1-30.2-6-30.2 8.2 0 14.3 22.9 8.3 22.9 15 0 6.3-13.5 5.8-20.7.8l-3.5 6.3c11.2 7.6 32.6 6 32.6-7.5zm35.4 9.3l-2.2-6.8c-3.8 2.1-12.2 4.4-12.2-4.1v-16.6h13.1V392h-13.1v-11.2h-8.2V392h-7.6v7.3h7.6V416c0 17.6 17.3 14.4 22.6 10.9zm13.3-13.4h27.5c0-16.2-7.4-22.6-17.4-22.6-10.6 0-18.2 7.9-18.2 19.3 0 20.5 22.6 23.9 33.8 14.2l-3.8-6c-7.8 6.4-19.6 5.8-21.9-4.9zm59.1-21.5c-4.6-2-11.6-1.8-15.2 4.4V392h-8.2v36.7h8.2V408c0-11.6 9.5-10.1 12.8-8.4l2.4-7.6zm10.6 18.3c0-11.4 11.6-15.1 20.7-8.4l3.8-6.5c-11.6-9.1-32.7-4.1-32.7 15 0 19.8 22.4 23.8 32.7 15l-3.8-6.5c-9.2 6.5-20.7 2.6-20.7-8.6zm66.7-18.3H408v4.4c-8.3-11-29.9-4.8-29.9 13.9 0 19.2 22.4 24.7 29.9 13.9v4.6h8.2V392zm33.7 0c-2.4-1.2-11-2.9-15.2 4.4V392h-7.9v36.7h7.9V408c0-11 9-10.3 12.8-8.4l2.4-7.6zm40.3-14.9h-7.9v19.3c-8.2-10.9-29.9-5.1-29.9 13.9 0 19.4 22.5 24.6 29.9 13.9v4.6h7.9v-51.7zm7.6-75.1v4.6h.8V302h1.9v-.8h-4.6v.8h1.9zm6.6 123.8c0-.5 0-1.1-.3-1.6-.3-.3-.5-.8-.8-1.1-.3-.3-.8-.5-1.1-.8-.5 0-1.1-.3-1.6-.3-.3 0-.8.3-1.4.3-.5.3-.8.5-1.1.8-.5.3-.8.8-.8 1.1-.3.5-.3 1.1-.3 1.6 0 .3 0 .8.3 1.4 0 .3.3.8.8 1.1.3.3.5.5 1.1.8.5.3 1.1.3 1.4.3.5 0 1.1 0 1.6-.3.3-.3.8-.5 1.1-.8.3-.3.5-.8.8-1.1.3-.6.3-1.1.3-1.4zm3.2-124.7h-1.4l-1.6 3.5-1.6-3.5h-1.4v5.4h.8v-4.1l1.6 3.5h1.1l1.4-3.5v4.1h1.1v-5.4zm4.4-80.5c0-76.2-62.1-138.3-138.5-138.3-27.2 0-53.9 8.2-76.5 23.1 72.1 59.3 73.2 171.5 0 230.5 22.6 15 49.5 23.1 76.5 23.1 76.4.1 138.5-61.9 138.5-138.4z" />
+            </svg><svg class="me-3" xmlns="http://www.w3.org/2000/svg" height="2em"
+              viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M111.4 295.9c-3.5 19.2-17.4 108.7-21.5 134-.3 1.8-1 2.5-3 2.5H12.3c-7.6 0-13.1-6.6-12.1-13.9L58.8 46.6c1.5-9.6 10.1-16.9 20-16.9 152.3 0 165.1-3.7 204 11.4 60.1 23.3 65.6 79.5 44 140.3-21.5 62.6-72.5 89.5-140.1 90.3-43.4.7-69.5-7-75.3 24.2zM357.1 152c-1.8-1.3-2.5-1.8-3 1.3-2 11.4-5.1 22.5-8.8 33.6-39.9 113.8-150.5 103.9-204.5 103.9-6.1 0-10.1 3.3-10.9 9.4-22.6 140.4-27.1 169.7-27.1 169.7-1 7.1 3.5 12.9 10.6 12.9h63.5c8.6 0 15.7-6.3 17.4-14.9.7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3 6.5-34.8 4.6-71.4-23.8-92.6z" />
+            </svg><svg xmlns="http://www.w3.org/2000/svg" height="2em"
+              viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z" />
+            </svg>
+        </div>
+      </div>
+      <div style="border-top: 2px dashed lightgray;color: white;" class="my-3 pt-3" id="footerBottom">Designed by Demo
+        Theme
+        All rights reserved.</div>
+    </div>
+  </section>
+  <script src="./jquery-3.7.0.min.js"></script>
+  <script src="./bootstrap.bundle.min.js"></script>
+  <script src="./particles.min.js"></script>
+  <script src="./app.js"></script>
+  <script>
+    $(window).on('load', function () {
+      $('#loading').animate({ opacity: 0 }, 3000, function () {
+        $(this).remove();
+        $('#subscribe').addClass('d-flex')
+        $('#staticBackdrop').modal('show');
+      });
+      setInterval(function () {
+        if ($('#carouselPhoto').attr('src') === 'https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/Slider2.jpg') {
+          $('#carouselPhoto').attr("src", "https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/Slider1.jpg")
+        } else {
+          $('#carouselPhoto').attr("src", "https://elementor.dostguru.com/clausgift/wp-content/uploads/2022/01/Slider2.jpg")
+        }
+      }, 5000);
+    });
+    $('#signUp').on('click', function () {
+      $('#subscribe').remove()
+    })
+    $('#modalClose').on('click', function () {
+      $('#subscribe').remove()
+    })
+    $('#blogTag').on('mouseenter', function () {
+      $('#dropdownLg').show()
+    })
+    $('#blogTag').on('mouseleave', function () {
+      $('#dropdownLg').hide()
+    })
+    $('#offcanvasClose').on('click', function () {
+      $('#offcanvasNavbar').hide()
+    })
+    $('#barButton').on('click', function () {
+      $('#offcanvasNavbar').show()
+    })
+    $('#offcanvasBlogTag').on('click', function () {
+      $('#dropdownSm').toggle();
+    })
+  </script>
+</body>
+
+</html>
