@@ -17,14 +17,14 @@ a {
 
 #loading {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background: white;
   position: fixed;
 }
 
 #subscribe {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
@@ -164,8 +164,10 @@ a {
 }
 
 #snow img {
-  width: 100%;
+  width: 90%;
   object-fit: cover;
+  margin: auto;
+  display: block;
 }
 
 #particles-js {
@@ -175,8 +177,8 @@ a {
   top: 0;
   width: 100%;
   z-index: -1;
-  height: calc(55vw + 70px);
-  max-height: 360px;
+  /* height: calc(90px + 20%); */
+  height: calc(90px + 42vw)
 }
 
 #fontBlack {
@@ -314,6 +316,8 @@ a {
 #footerTopics06 {
   display: none !important;
 }
+
+@medis (min-width: 576px) {}
 
 @media (min-width: 768px) {
   #footerTop {
@@ -479,7 +483,7 @@ a {
   }
 }
 
-@media(min-width:1200px) {
+@media(min-width: 1200px) {
   #particles-js {
     max-height: 660px;
     height: 50vw;
