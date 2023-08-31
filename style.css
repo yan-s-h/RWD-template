@@ -186,13 +186,11 @@ a {
 }
 
 #productList {
-  max-height: 240px;
-  overflow: hidden;
+  white-space: nowrap
 }
 
 #productList img {
-
-  padding: 1vw;
+  width: 70%;
   cursor: pointer;
 }
 
@@ -205,8 +203,8 @@ a {
 .productListBox {
   border: 2px dashed gray !important;
   border-radius: 50% !important;
-  width: 130px;
-  height: 130px;
+  width: 30vw;
+  height: 30vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -317,12 +315,17 @@ a {
   display: none !important;
 }
 
-
+@media (min-width:576px) {
+  .productListBox {
+    width: 20vw;
+    height: 20vw;
+  }
+}
 
 @media (min-width: 768px) {
   .productListBox {
-    width: 150px;
-    height: 150px;
+    width: 17.5vw;
+    height: 17.5vw;
   }
 
   #footerTop {
@@ -449,6 +452,11 @@ a {
 }
 
 @media (min-width: 992px) {
+  .productListBox {
+    width: 13vw;
+    height: 13vw;
+  }
+
   #nav {
     height: 99px;
   }
