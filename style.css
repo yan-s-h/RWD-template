@@ -15,6 +15,14 @@ a {
   color: black;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.h-40px {
+  height: 40px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -236,7 +244,6 @@ a {
 
 #newProducts img {
   cursor: pointer;
-  width: 100%;
 }
 
 #particles-js-2 {
