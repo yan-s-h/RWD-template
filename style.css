@@ -458,6 +458,19 @@ a {
     box-sizing: border-box;
   }
 
+  .service {
+    border: 2px dashed gray;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .serviceImg {
+    width: 70px !important;
+    height: 70px !important;
+    display: block;
+  }
+
   .serviceText {
     font-size: 14px;
   }
