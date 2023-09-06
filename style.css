@@ -248,24 +248,21 @@ a {
 
 #particles-js-2 {
   width: 100%;
-  height: 64vw;
   background-color: rgb(24, 37, 47);
-}
-
-#comment {
-  height: 100%;
   position: relative;
+  height: 298px;
 }
 
 .comment {
-  position: absolute;
   width: 90%;
-  height: 60vw;
+  height: 90%;
   background-color: white;
   color: black;
-  left: 5%;
-  top: 2vw;
   border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  left: 5%;
+  top: 5%;
   box-sizing: border-box;
 }
 
@@ -308,7 +305,7 @@ a {
   top: 0;
   width: 100%;
   z-index: -1;
-  height: 430px;
+  height: 447px;
 }
 
 #footerTop,
@@ -331,6 +328,23 @@ a {
 
 #footerTopics06 {
   display: none !important;
+}
+
+.service {
+  border: 2px dashed gray;
+  border-radius: 50%;
+  min-width: 100px;
+  height: 100px;
+}
+
+.serviceImg {
+  width: 70px;
+  height: 70px;
+}
+
+.serviceText {
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 @media (min-width:576px) {
@@ -442,38 +456,17 @@ a {
   }
 
   #particles-js-2 {
-    width: 100%;
-    height: 50vw;
+    height: 32vw;
   }
 
   .comment {
-    position: absolute;
-    width: 90%;
-    height: 45vw;
-    background-color: white;
-    color: black;
-    left: 5%;
-    top: 2.5vw;
-    border-radius: 4px;
-    box-sizing: border-box;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
   }
 
-  .service {
-    border: 2px dashed gray;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-  }
 
-  .serviceImg {
-    width: 70px !important;
-    height: 70px !important;
-    display: block;
-  }
-
-  .serviceText {
-    font-size: 14px;
-  }
 
   #latestNews02 {
     display: block;
@@ -518,17 +511,6 @@ a {
     margin-left: 100px;
   }
 
-
-
-  .comment {
-    width: 60%;
-    left: 20%;
-  }
-
-  #particles-js-2 {
-    height: 50vw;
-  }
-
   .text-16-20 {
     font-size: 20px;
   }
@@ -555,6 +537,15 @@ a {
   #latestNews03 {
     display: block;
   }
+
+  .comment {
+    width: 60%;
+    left: 20%;
+  }
+
+  #particles-js-2 {
+    height: 20vw;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -567,12 +558,5 @@ a {
     height: calc(90px + 43vw);
   }
 
-  .comment {
-    height: 20vw;
-    top: 3vw;
-  }
 
-  #particles-js-2 {
-    height: 26vw;
-  }
 }
